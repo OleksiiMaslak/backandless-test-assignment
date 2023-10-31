@@ -1,17 +1,31 @@
-import React from 'react';
-import { NavLink, Outlet, useNavigation, useLoaderData } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
+import GetTabsId from '../Hooks/GetTabsId';
 
-const Layout = ({data}) => {
-  const {state} = useNavigation();
-  const tabs = useLoaderData();
-  console.log(tabs)
+const Layout = () => {
+
+  const [tabs, setTabs] = useState([]) 
+
+  useEffect(() => {
+    async function fetchData() {
+        try {
+            const tabsList = await GetTabsId();
+            console.log(tabsList);
+            setTabs(tabsList);
+        } catch (error) {
+            console.error("Error occurred", error);
+        }
+    }
+
+    fetchData();
+}, []);
+
   return (
     <>
-    {state === "loading" ? <div>Loading...</div>: null}
+
     <header>
-        <NavLink to="/dummyList" className= 'header-link'>DummyList</NavLink>
-        <NavLink to="/dummyTable" className= 'header-link'>DummyTable</NavLink>
-        <NavLink to="/dummyChart" className= 'header-link'>DummyChart</NavLink>
+      {tabs.sort((a, b) => a.order - b.order).map(item => <NavLink to={`/${item.id}`} className= 'header-link' key={item.order}>{item.title}</NavLink>)}
+
     </header>
     <main className="container">
         <Outlet></Outlet>

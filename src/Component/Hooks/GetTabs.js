@@ -1,20 +1,16 @@
-import axios from "axios";
 
-const GetTabs = ({ params }) => {
-    async function fetchTabs() {
+
+const GetTabs = () => {
         try {
-            const response = await axios.get(
-                "https://raw.githubusercontent.com/OleksiiMaslak/backandless-test-assignment/master/tabs.json"
-            );
-            console.log(params);
-            return {
-                params
-            };
+            const response = fetch('https://raw.githubusercontent.com/OleksiiMaslak/backandless-test-assignment/master/tabs.json');
+            console.log(response);
+            return response;
+
         } catch (error) {
             console.error("Error occured" - error);
         }
-    }
-    fetchTabs();
+
+
 };
 
 export default GetTabs;
