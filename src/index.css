@@ -5,9 +5,89 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#root {
+  min-height: 100vh; /* Минимальная высота на всю видимую область страницы */
+  min-width: 100%;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Стили для ссылок в хедере */
+.header-link {
+  color: #ffffff; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  margin-right: 20px; /* Расстояние между ссылками в хедере */
+  align-items: center; /* Центрирование элементов по вертикали */
+  justify-content: space-between; /* Распределение пространства между элементами по горизонтали */
+  padding: 20px; /* Внутренний отступ div "root" */
+}
+
+.error-link {
+  color: #ffffff; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  align-items: center; /* Центрирование элементов по вертикали */
+  justify-content: space-between; /* Распределение пространства между элементами по горизонтали */
+}
+
+.header-link:hover, .error-link:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+li::marker {
+  color: aqua;
+}
+
+/* Стили для таблицы */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #ffffff; /* Цвет границ таблицы */
+}
+
+th, td {
+  padding: 10px; /* Внутренний отступ ячеек таблицы */
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+
+header {
+  background-color: #333944; /* Цвет фона хедера */
+  padding: 20px; /* Внутренний отступ хедера */
+}
+
+/* Стили для класса container */
+.container {
+  max-width: 960px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера по горизонтали */
+  padding: 20px; /* Внутренний отступ контейнера */
+}
+
+ul li {
+  margin-top: 15px;
+}
+
+
+@media (max-width: 768px) {
+  /* Изменения для мобильных устройств */
+  .header-link {
+    padding: 5px; /* Уменьшим внутренний отступ для мобильных устройств */
+  }
 }
