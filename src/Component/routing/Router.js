@@ -7,7 +7,6 @@ import DummyChart from "./tabs/dummyChart";
 import Layout from "./Layout";
 import ErrorPage from "./ErrorPage";
 import GetTabs from "../Hooks/GetTabs";
-import Dummy from "./Dummy";
 
 const router = createBrowserRouter([
     {

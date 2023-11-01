@@ -84,6 +84,44 @@ ul li {
   margin-top: 15px;
 }
 
+/* Стили для селекта */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-select {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
+  background-color: #333944; /* Цвет фона селекта */
+  color: #007bff; /* Цвет текста в селекте (голубой) */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Неоновый эффект */
+  outline: none; /* Убирает выделение при фокусе */
+}
+
+.header-link {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+/* Стили для опций (options) */
+.header-select option {
+  background-color: #333944; /* Цвет фона опций */
+  color: #fff; /* Цвет текста опций */
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Неоновый эффект */
+}
+
+.ant-list-item-meta-title a, .ant-list-item-meta-description{
+  color: #fff !important;
+}
+.recharts-wrapper{
+  margin: auto;
+}
+
 
 @media (max-width: 768px) {
   /* Изменения для мобильных устройств */
